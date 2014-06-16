@@ -26,26 +26,67 @@ Design
 Limits
 ------
 * Ring diameter 50 cm; circumference 1.6 m
-* Ignore LEDs within 5 cm to the base; LED-covered length is 1.5 m
 * PLCC4 RGB LEDs are 3.5x2.8 mm; maximum resolution is 9 dpi
 * With interlacing; maximum resolution is 18 dpi
-* At 18 dpi, would use **535** LEDs
-* Control needs 1,605 channels
+* At 18 dpi, would use 535 LEDs
+* Divide circle into **16** sectors, ignore the two bottom sectors
+* Each sector has 32 LEDs, for a total of 64 LEDs ignored
+* In total, we have **448** LEDs
+* Control for RGB needs 1,344 channels
 * Spin ring at 60 rps
 * We should have the same resolution both horizontally and vertically
-* Each slice must update 1,605 channels
-* Divide channels into matrix of 40x41
-* With a shift-register column driver, this requires **42** FPGA connections
-* Each slice must update 40 columns; FPGA scans at 1.3 MHz
-* With RGB555; 32 shades per base color; FPGA shades at **42 MHz**
+* Each slice must update 1,344 channels
+* FPGA board has **42** I/O pins
+* Divide channels into matrix of 32x42
+* With a shift-register column driver, this requires **34** FPGA connections
+* Each slice must update 42 columns; FPGA scans at 1.3 MHz
+* With RGB555; 32 shades per base color; FPGA runs PWM at **42 MHz**
 * With RGB555; framebuffer memory is 572 kB; with double-buffering **1.14 MB**
 
+Mechanical
+----------
+* A ring divided into 16 sectors, each with a PCB
+* Cross-bars horizontally and vertically for rigidity
+* Stepper-motor located in center of ring to avoid unbalanced twisting forces
+* Plastic fasteners to attach cross-bars to stepper motor and ring PCBs
+* Ring PCBs on one side shifted 1/2 LED for interlacing
+* Foundation in reinforced concrete with a fixed steel axis extending to the stepper motor
+* Steel axis connected to stepper motor with locking pin?
+* FPGA board located in the lower part of the ring to utilize the space created by not having LED PCBs there
+* Stepper motor driver could be counter-weight for FPGA board
+* One (or two?) ball bearings in the lower ring part
+* Ball bearings inside copper pipe or plastic to make it easy to fasten the ring PCBs and FPGA
+* We can run ground in the fixed steel axis, unless the stepper motor is weird
+* If one ball bearing is insulated from the fixed axis, the other pole can go through the bearing
+* Hall/optical-sensor for motor auto-calibration (1 pulse/revolution)
+* Ring PCBs
+  * Copper traces going to the edge, connecting by direct soldering should be rigid and good
+
+Electrical
+----------
+* We should be fine with 5 V
+  * FPGA board needs Vcc = 5 V
+  * LEDs are Vf <= 3.5 V
+  * Stepper motor (42BYGHW609, NEMA 17?) needs 3.4 V (resistive)
+* Current usage is max 3 A
+  * FPGA likely less than 100 mA
+  * LEDs are Ifm < 32*25 mA < 1 A
+  * Stepper motor can do 1.7 A (resistive)
+* Power usage is max 15 W
+* Components
+  * Stepper motor driver
+  * Power supply 5V/15W
+  * Ring sector PCBs x14
+  * FPGA interface PCBs x2
+    * Ring-side PSU filter
+    * Hall/optical-sensor
+    * Stepper motor driver
 
 Datasheets
 ----------
-
 These are components which we already have:
 
 * http://store.gadgetfactory.net/papilio-pro, Spartan LX9, 32Mhz oscillator, 48 GPIO pins, 64Mbit SDRAM, 64Mbit Flash
 * Spartan LX9 FPGA: http://www.xilinx.com/support/documentation/data_sheets/ds160.pdf
 * http://papilio.cc/index.php?n=Playground.PapilioPinouts
+* PLCC4RGBCT-CA: http://www.hebeiltd.com.cn/led.datasheet/PLCC4RGBCT-CA.pdf
