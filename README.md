@@ -39,3 +39,13 @@ Limits
 * Each slice must update 40 columns; FPGA scans at 1.3 MHz
 * With RGB555; 32 shades per base color; FPGA shades at **42 MHz**
 * With RGB555; framebuffer memory is 572 kB; with double-buffering **1.14 MB**
+
+
+Datasheets
+----------
+
+These are components which we already have:
+
+* http://store.gadgetfactory.net/papilio-pro, Spartan LX9, 32Mhz oscillator, 48 GPIO pins, 64Mbit SDRAM, 64Mbit Flash
+* Spartan LX9 FPGA: http://www.xilinx.com/support/documentation/data_sheets/ds160.pdf
+* http://papilio.cc/index.php?n=Playground.PapilioPinouts
