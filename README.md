@@ -20,7 +20,7 @@ Design
 * Stick LEDs on both halves of the ring for better balance.
 * Shift LEDs on one half one half-LED for increased resolution.
 * Use wireless for interfacing, so we don't have to transfer high-bandwidth data to the rotor.
-  . Bluetooth module is suggested.
+  * Bluetooth module is suggested.
 * Build PCB ring segments with SMD LEDs mounted on the edge.
 
 Limits
@@ -61,6 +61,7 @@ Mechanical
 * Hall/optical-sensor for motor auto-calibration (1 pulse/revolution)
 * Ring PCBs
   * Copper traces going to the edge, connecting by direct soldering should be rigid and good
+  * We will be running MHz signals, so 4-layer PCB is probably needed to have a full ground plane
 
 Electrical
 ----------
@@ -81,12 +82,24 @@ Electrical
     * Ring-side PSU filter
     * Hall/optical-sensor
     * Stepper motor driver
+    * LED row drivers
+* Each ring PCB will have 32x3 channels
+  * With 16 rows, this means 6 columns
+  * We split the PCB in two column groups and drive each color as a column, i.e. a 2x3 column configuration
+  * Need a 6-bit high-speed shift register, f <= 42 MHz, 23 ns per cycle
+  * Prefer ICs that can drive 25 mA LEDs by themselves
+  * Candidate is [74VHC595](http://www.fairchildsemi.com/ds/74/74VHC595.pdf), Iout <= 25 mA, Vcc <= 5.5 V, f <= 155 MHz
 
 Datasheets
 ----------
 These are components which we already have:
 
-* http://store.gadgetfactory.net/papilio-pro, Spartan LX9, 32Mhz oscillator, 48 GPIO pins, 64Mbit SDRAM, 64Mbit Flash
-* Spartan LX9 FPGA: http://www.xilinx.com/support/documentation/data_sheets/ds160.pdf
-* http://papilio.cc/index.php?n=Playground.PapilioPinouts
-* PLCC4RGBCT-CA: http://www.hebeiltd.com.cn/led.datasheet/PLCC4RGBCT-CA.pdf
+* Controller: [Spartan LX9](http://www.xilinx.com/support/documentation/data_sheets/ds160.pdf), 32Mhz oscillator, 48 GPIO pins, 64Mbit SDRAM, 64Mbit Flash
+  * [Store](http://store.gadgetfactory.net/papilio-pro)
+  * [Pinouts](http://papilio.cc/index.php?n=Playground.PapilioPinouts)
+* RGB LED: [PLCC4RGBCT-CA](http://www.hebeiltd.com.cn/led.datasheet/PLCC4RGBCT-CA.pdf)
+
+Candidates for new parts:
+
+* PSU: [AS-25-5](http://www.aliexpress.com/item/25W-5V-Small-Volume-Single-Output-Switching-power-supply-for-LED-Strip-light/628334432.html)
+* Stepper motor: [42BYGHW609](http://www.aliexpress.com/item/Best-Selling-5-PCS-Wantai-4-lead-Nema-17-Stepper-Motor-42BYGHW609-56oz-in-40mm-1/599005546.html)
