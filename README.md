@@ -21,6 +21,7 @@ Design
 * Shift LEDs on one half one half-LED for increased resolution.
 * Use wireless for interfacing, so we don't have to transfer high-bandwidth data to the rotor.
   * Bluetooth module is suggested.
+  * NRF24L01 pair with Teensy USB interface suggested.
 * Build PCB ring segments with SMD LEDs mounted on the edge.
 
 Limits
@@ -89,6 +90,12 @@ Electrical
   * Need a 6-bit high-speed shift register, f <= 42 MHz, 23 ns per cycle
   * Prefer ICs that can drive 25 mA LEDs by themselves
   * Candidate is [74VHC595](http://www.fairchildsemi.com/ds/74/74VHC595.pdf), Iout <= 25 mA, Vcc <= 5.5 V, f <= 155 MHz
+* FPGA I/O, 48 max
+  * 1 Rotation sensor (analog?)
+  * 2 LED columns (clock, data)
+  * 3 Communications (SPI)
+  * 4 Stepper motor output (Bipolar H-bridge)
+  * 32 LED rows
 
 Datasheets
 ----------
@@ -102,4 +109,6 @@ These are components which we already have:
 Candidates for new parts:
 
 * PSU: [AS-25-5](http://www.aliexpress.com/item/25W-5V-Small-Volume-Single-Output-Switching-power-supply-for-LED-Strip-light/628334432.html)
+* PSU: [HR-090505A](http://www.aliexpress.com/item/AC-DC-Adapter-5V-5A-DC-Plug-Size-5-5x2-5mm-Power-Adapter-Charger-Switching-with/1060711434.html)
 * Stepper motor: [42BYGHW609](http://www.aliexpress.com/item/Best-Selling-5-PCS-Wantai-4-lead-Nema-17-Stepper-Motor-42BYGHW609-56oz-in-40mm-1/599005546.html)
+* Motor driver stage: [L298](http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000240.pdf)
