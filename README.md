@@ -105,6 +105,8 @@ These are components which we already have:
   * [Store](http://store.gadgetfactory.net/papilio-pro)
   * [Pinouts](http://papilio.cc/index.php?n=Playground.PapilioPinouts)
 * RGB LED: [PLCC4RGBCT-CA](http://www.hebeiltd.com.cn/led.datasheet/PLCC4RGBCT-CA.pdf)
+* RF transceiver: [nRF24L01](http://www.nordicsemi.com/eng/content/download/2726/34069/file/nRF24L01P_Product_Specification_1_0.pdf)
+  * [Module](http://www.aliexpress.com/item/2pcs-lot-NRF24L01-2-4GHz-Wireless-Transceiver-Module-for-Arduino-Microcontroller-Free-Shipping/1836172303.html)
 
 Candidates for new parts:
 
