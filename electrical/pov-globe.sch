@@ -36,9 +36,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 8
 Title "PoV Globe"
-Date "22 jun 2014"
+Date "29 jun 2014"
 Rev "1"
 Comp "makers-ie"
 Comment1 ""
@@ -797,7 +797,7 @@ F 1 "CONN_3" V 1700 5700 40  0000 C CNN
 F 2 "" H 1650 5700 60  0000 C CNN
 F 3 "" H 1650 5700 60  0000 C CNN
 	1    1650 5700
-	-1   0    0    1   
+	-1   0    0    -1  
 $EndComp
 Text Label 2300 5800 2    60   ~ 0
 CLK
@@ -960,4 +960,10 @@ F2 "LR" I L 8600 1500 60
 $EndSheet
 Wire Bus Line
 	8150 1500 8600 1500
+$Sheet
+S 850  5400 600  700 
+U 53AFF9B1
+F0 "LED segment" 50
+F1 "led-segment.sch" 50
+$EndSheet
 $EndSCHEMATC

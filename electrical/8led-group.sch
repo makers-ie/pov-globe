@@ -1,0 +1,272 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:papilio
+LIBS:stepper drivers
+LIBS:rfinchina
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 8
+Title ""
+Date "29 jun 2014"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L PLCC4RGBCT-CA LED?
+U 1 1 53AFFD30
+P 5300 1600
+F 0 "LED?" H 5500 1850 60  0000 R CNN
+F 1 "PLCC4RGBCT-CA" H 5300 1350 60  0000 C CNN
+F 2 "" H 5300 1550 60  0000 C CNN
+F 3 "" H 5300 1550 60  0000 C CNN
+	1    5300 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L PLCC4RGBCT-CA LED?
+U 1 1 53AFFD3D
+P 5300 2300
+F 0 "LED?" H 5500 2550 60  0000 R CNN
+F 1 "PLCC4RGBCT-CA" H 5300 2050 60  0000 C CNN
+F 2 "" H 5300 2250 60  0000 C CNN
+F 3 "" H 5300 2250 60  0000 C CNN
+	1    5300 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L PLCC4RGBCT-CA LED?
+U 1 1 53AFFD43
+P 5300 3000
+F 0 "LED?" H 5500 3250 60  0000 R CNN
+F 1 "PLCC4RGBCT-CA" H 5300 2750 60  0000 C CNN
+F 2 "" H 5300 2950 60  0000 C CNN
+F 3 "" H 5300 2950 60  0000 C CNN
+	1    5300 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L PLCC4RGBCT-CA LED?
+U 1 1 53AFFD49
+P 5300 3700
+F 0 "LED?" H 5500 3950 60  0000 R CNN
+F 1 "PLCC4RGBCT-CA" H 5300 3450 60  0000 C CNN
+F 2 "" H 5300 3650 60  0000 C CNN
+F 3 "" H 5300 3650 60  0000 C CNN
+	1    5300 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L PLCC4RGBCT-CA LED?
+U 1 1 53B000C9
+P 5300 4400
+F 0 "LED?" H 5500 4650 60  0000 R CNN
+F 1 "PLCC4RGBCT-CA" H 5300 4150 60  0000 C CNN
+F 2 "" H 5300 4350 60  0000 C CNN
+F 3 "" H 5300 4350 60  0000 C CNN
+	1    5300 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L PLCC4RGBCT-CA LED?
+U 1 1 53B000CF
+P 5300 5100
+F 0 "LED?" H 5500 5350 60  0000 R CNN
+F 1 "PLCC4RGBCT-CA" H 5300 4850 60  0000 C CNN
+F 2 "" H 5300 5050 60  0000 C CNN
+F 3 "" H 5300 5050 60  0000 C CNN
+	1    5300 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L PLCC4RGBCT-CA LED?
+U 1 1 53B000D5
+P 5300 5800
+F 0 "LED?" H 5500 6050 60  0000 R CNN
+F 1 "PLCC4RGBCT-CA" H 5300 5550 60  0000 C CNN
+F 2 "" H 5300 5750 60  0000 C CNN
+F 3 "" H 5300 5750 60  0000 C CNN
+	1    5300 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L PLCC4RGBCT-CA LED?
+U 1 1 53B000DB
+P 5300 6500
+F 0 "LED?" H 5500 6750 60  0000 R CNN
+F 1 "PLCC4RGBCT-CA" H 5300 6250 60  0000 C CNN
+F 2 "" H 5300 6450 60  0000 C CNN
+F 3 "" H 5300 6450 60  0000 C CNN
+	1    5300 6500
+	1    0    0    -1  
+$EndComp
+Text HLabel 8100 1500 2    60   Input ~ 0
+LC0
+Text HLabel 8100 1600 2    60   Input ~ 0
+LC1
+Text HLabel 8100 1700 2    60   Input ~ 0
+LC2
+Entry Wire Line
+	4400 6400 4500 6500
+Entry Wire Line
+	4400 5700 4500 5800
+Entry Wire Line
+	4400 5000 4500 5100
+Entry Wire Line
+	4400 4300 4500 4400
+Entry Wire Line
+	4400 3600 4500 3700
+Entry Wire Line
+	4400 2900 4500 3000
+Entry Wire Line
+	4400 2200 4500 2300
+Entry Wire Line
+	4400 1500 4500 1600
+Wire Bus Line
+	4400 1400 3100 1400
+Wire Bus Line
+	4400 6400 4400 1400
+Wire Wire Line
+	4800 6500 4500 6500
+Wire Wire Line
+	4800 5800 4500 5800
+Wire Wire Line
+	4800 5100 4500 5100
+Wire Wire Line
+	4800 4400 4500 4400
+Wire Wire Line
+	4800 3700 4500 3700
+Wire Wire Line
+	4800 3000 4500 3000
+Wire Wire Line
+	4800 2300 4500 2300
+Wire Wire Line
+	4800 1600 4500 1600
+Connection ~ 6000 1500
+Connection ~ 6100 1600
+Connection ~ 6200 1700
+Connection ~ 6200 2400
+Wire Wire Line
+	5800 1700 8100 1700
+Connection ~ 6200 3100
+Wire Wire Line
+	6200 2400 5800 2400
+Connection ~ 6200 3800
+Wire Wire Line
+	6200 3100 5800 3100
+Connection ~ 6200 4500
+Wire Wire Line
+	6200 3800 5800 3800
+Connection ~ 6200 5200
+Wire Wire Line
+	6200 4500 5800 4500
+Connection ~ 6200 5900
+Wire Wire Line
+	6200 5200 5800 5200
+Wire Wire Line
+	6200 5900 5800 5900
+Wire Wire Line
+	6200 1700 6200 6600
+Wire Wire Line
+	6200 6600 5800 6600
+Connection ~ 6100 5800
+Wire Wire Line
+	6100 6500 5800 6500
+Connection ~ 6100 5100
+Wire Wire Line
+	6100 5800 5800 5800
+Connection ~ 6100 4400
+Wire Wire Line
+	6100 5100 5800 5100
+Connection ~ 6100 3700
+Wire Wire Line
+	6100 4400 5800 4400
+Connection ~ 6100 3000
+Wire Wire Line
+	6100 3700 5800 3700
+Connection ~ 6100 2300
+Wire Wire Line
+	6100 3000 5800 3000
+Wire Wire Line
+	6100 2300 5800 2300
+Wire Wire Line
+	6100 1600 6100 6500
+Wire Wire Line
+	5800 1600 8100 1600
+Connection ~ 6000 2200
+Wire Wire Line
+	5800 1500 8100 1500
+Connection ~ 6000 2900
+Wire Wire Line
+	6000 2200 5800 2200
+Connection ~ 6000 3600
+Wire Wire Line
+	6000 2900 5800 2900
+Connection ~ 6000 4300
+Wire Wire Line
+	6000 3600 5800 3600
+Connection ~ 6000 5000
+Wire Wire Line
+	6000 4300 5800 4300
+Connection ~ 6000 5700
+Wire Wire Line
+	6000 5000 5800 5000
+Wire Wire Line
+	6000 5700 5800 5700
+Wire Wire Line
+	6000 1500 6000 6400
+Wire Wire Line
+	6000 6400 5800 6400
+Text HLabel 3100 1400 0    60   Input ~ 0
+LR
+Text Label 4500 1600 0    60   ~ 0
+LR0
+Text Label 4500 2300 0    60   ~ 0
+LR1
+Text Label 4500 3000 0    60   ~ 0
+LR2
+Text Label 4500 3700 0    60   ~ 0
+LR3
+Text Label 4500 4400 0    60   ~ 0
+LR4
+Text Label 4500 5100 0    60   ~ 0
+LR5
+Text Label 4500 5800 0    60   ~ 0
+LR6
+Text Label 4500 6500 0    60   ~ 0
+LR7
+$EndSCHEMATC

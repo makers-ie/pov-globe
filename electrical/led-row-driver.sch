@@ -36,9 +36,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 2
+Sheet 2 8
 Title ""
-Date "22 jun 2014"
+Date "29 jun 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -97,15 +97,11 @@ $EndComp
 Wire Wire Line
 	9300 1500 9200 1500
 Wire Wire Line
-	9200 1500 9200 3300
-Wire Wire Line
 	9200 2000 9300 2000
 Wire Wire Line
 	9200 2500 9300 2500
-Connection ~ 9200 2000
 Wire Wire Line
 	9200 3000 9300 3000
-Connection ~ 9200 2500
 $Comp
 L GND #PWR?
 U 1 1 53A7004D
@@ -839,4 +835,19 @@ Text Label 2100 5650 0    60   ~ 0
 LR14
 Text Label 2100 5950 0    60   ~ 0
 LR15
+Wire Wire Line
+	9200 2500 9200 3300
+$Comp
+L +5V #PWR?
+U 1 1 53B074F2
+P 9200 800
+F 0 "#PWR?" H 9200 890 20  0001 C CNN
+F 1 "+5V" H 9200 890 30  0000 C CNN
+F 2 "" H 9200 800 60  0000 C CNN
+F 3 "" H 9200 800 60  0000 C CNN
+	1    9200 800 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 800  9200 2000
 $EndSCHEMATC
