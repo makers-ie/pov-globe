@@ -1,0 +1,90 @@
+#!/usr/bin/python3
+"""
+A simple script to generate our LED segment PCB outline.
+
+Creates a rounded board edge and places LEDs in a smooth curve.
+"""
+import argparse
+import math
+import string
+
+class VectorType(object):
+   """Representation of a vector type for argparse."""
+
+   def __init__(self, length, type=float):
+      """Construct a new vector type.
+
+      :param length: the vector cardinality.
+      :type  length: int
+      :param type: the type of vector elements.
+      :type  type: type or callable
+      """
+      self.type = type
+      self.length = length
+
+   def __call__(self, s):
+      """Parse a string as a vector.
+
+      Performs simple type and length checks.
+
+      :param s: the input string.
+      :type  s: str
+      :rtype: tuple
+      """
+      v = s.split(",")
+      if len(v) != self.length:
+         raise ValueError("expected vector of length %s: %r" % (self.length, s))
+      return tuple(self.type(x) for x in v)
+
+def vec2str(v):
+   """Render a vector as a string in KiCAD s-expr format.
+
+   :param v: input vector.
+   :type  v: tuple
+   :rtype: str
+   """
+   return " ".join(map(str, v))
+
+def main():
+   argp = argparse.ArgumentParser()
+   argp.add_argument("--segments", type=int, default=16, help="Number of circle segments [%(default)s].")
+   argp.add_argument("--center", type=VectorType(2), default=(400, 254), help="Center of circle on the drawing sheet [%(default)s].")
+   argp.add_argument("--radius", type=float, default=250, help="Outer radius, in millimeters [%(default)s mm].")
+   argp.add_argument("--width", type=float, default=50, help="Board width, in millimeters [%(default)s mm].")
+   argp.add_argument("--leds", type=int, default=32, help="Number of LEDs per segment [%(default)s].")
+   argp.add_argument("--module-file", type=argparse.FileType("rt"), required=True, help="File containing the module definition template.")
+   argp.add_argument("input", type=argparse.FileType("rt"), help="Input template file.")
+   argp.add_argument("output", type=argparse.FileType("wt"), help="Output file.")
+   args = argp.parse_args()
+
+   tmpl = string.Template(args.input.read())
+   modtmpl = string.Template(args.module_file.read())
+
+   angle = 360 / args.segments
+   rangle = math.radians(angle)
+   iradius = args.radius - args.width
+   lower = args.center[1]
+
+   # Compute positions for each of the actual LED footprints.
+   # Their anchor should be on the board edge.
+   led_modules = [dict(
+      ref="LED%s" % (i + 1,),
+      position=vec2str((
+         args.center[0] - args.radius * math.cos((i + 0.5) * rangle / args.leds),
+         args.center[1] - args.radius * math.sin((i + 0.5) * rangle / args.leds))),
+      angle=90 - (i + 0.5) * angle / args.leds)
+                  for i in range(args.leds)]
+
+   args.output.write(tmpl.substitute(
+      led_modules="\n".join(modtmpl.substitute(**m) for m in led_modules),
+      angle=angle,
+      center=vec2str(args.center),
+      lr_edge=vec2str((args.center[0] - args.radius, lower)),
+      ll_edge=vec2str((args.center[0] - iradius, lower)),
+      ul_edge=vec2str((args.center[0] - args.radius * math.cos(rangle), args.center[1] - args.radius * math.sin(rangle))),
+      ur_edge=vec2str((args.center[0] - iradius * math.cos(rangle), args.center[1] - iradius * math.sin(rangle)))
+   ))
+   args.output.flush()
+
+if __name__ == "__main__":
+   main()
