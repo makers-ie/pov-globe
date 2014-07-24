@@ -3,6 +3,9 @@
 *.bck
 *-cache.lib
 
+# Sketchup
+*.skb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
