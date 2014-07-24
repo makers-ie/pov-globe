@@ -1,4 +1,4 @@
-update=2014-06-22 10:48:01
+update=2014-07-14 17:23:39
 version=1
 last_client=eeschema
 [cvpcb]
@@ -87,3 +87,4 @@ LibName30=valves
 LibName31=papilio
 LibName32=stepper drivers
 LibName33=rfinchina
+LibName34=hb

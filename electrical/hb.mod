@@ -1,0 +1,48 @@
+PCBNEW-LibModule-V1  2014-07-23 20:42:42
+# encoding utf-8
+Units mm
+$INDEX
+plcc4-edge
+$EndINDEX
+$MODULE plcc4-edge
+Po 0 0 0 15 53D0102B 00000000 ~~
+Li plcc4-edge
+Sc 0
+AR 
+Op 0 0 0
+T0 0 -1.27 1 1 0 0.15 N V 21 N "LED?"
+T1 0 0 1 1 0 0.15 N I 21 N "PLCC4"
+DS -1.5 0 1.5 0 0.15 21
+DS 1.5 0 1.5 -2.1 0.15 21
+DS 1.5 -2.1 -1.5 -2.1 0.15 21
+DS -1.5 -2.1 -1.5 0 0.15 21
+$PAD
+Sh "1" R 0.8 1.27 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.635 0.635
+$EndPAD
+$PAD
+Sh "4" R 0.8 1.27 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.635 0.635
+$EndPAD
+$PAD
+Sh "2" R 0.8 1.27 0 0 0
+Dr 0 0 0
+At SMD N 00440001
+Ne 0 ""
+Po -0.635 0.635
+$EndPAD
+$PAD
+Sh "3" R 0.8 1.27 0 0 0
+Dr 0 0 0
+At SMD N 00440001
+Ne 0 ""
+Po 0.635 0.635
+$EndPAD
+$EndMODULE plcc4-edge
+$EndLIBRARY

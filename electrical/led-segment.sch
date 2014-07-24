@@ -32,13 +32,14 @@ LIBS:valves
 LIBS:papilio
 LIBS:stepper drivers
 LIBS:rfinchina
+LIBS:hb
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 8
 Title ""
-Date "29 jun 2014"
+Date "14 jul 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -52,7 +53,7 @@ U 1 1 53AFF9EB
 P 4800 2550
 F 0 "U1" H 4950 3150 70  0000 C CNN
 F 1 "74HC595" H 4800 1950 70  0000 C CNN
-F 2 "~" H 4800 2550 60  0000 C CNN
+F 2 "SSOP-16" H 4800 2550 60  0000 C CNN
 F 3 "~" H 4800 2550 60  0000 C CNN
 	1    4800 2550
 	1    0    0    -1  
