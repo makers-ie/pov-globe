@@ -51,6 +51,8 @@ def main():
    argp.add_argument("--center", type=VectorType(2), default=(400, 254), help="Center of circle on the drawing sheet [%(default)s].")
    argp.add_argument("--radius", type=float, default=250, help="Outer radius, in millimeters [%(default)s mm].")
    argp.add_argument("--width", type=float, default=50, help="Board width, in millimeters [%(default)s mm].")
+   argp.add_argument("--edge-conn-spacing", type=float, default=1.27, help="Spacing in board connections, in millimeters [%(default)s mm].")
+   argp.add_argument("--p20-radius", type=float, default=6.35, help="Outer radius for the 20-pin connector, in millimeters [%(default)s mm].")
    argp.add_argument("--leds", type=int, default=32, help="Number of LEDs per segment [%(default)s].")
    argp.add_argument("--module-file", type=argparse.FileType("rt"), required=True, help="File containing the module definition template.")
    argp.add_argument("input", type=argparse.FileType("rt"), help="Input template file.")
@@ -63,12 +65,19 @@ def main():
    angle = 360 / args.segments
    rangle = math.radians(angle)
    iradius = args.radius - args.width
+   p20radius = args.radius - args.p20_radius
+   p3radius = p20radius - 21*args.edge_conn_spacing
    lower = args.center[1]
 
    # Compute positions for each of the actual LED footprints.
    # Their anchor should be on the board edge.
    led_modules = [dict(
       ref="LED%s" % (i + 1,),
+      refposition=vec2str((
+         0,
+         5.12,
+         360 - (i + 0.5) * angle / args.leds
+      )),
       position=vec2str((
          args.center[0] - args.radius * math.cos((i + 0.5) * rangle / args.leds),
          args.center[1] - args.radius * math.sin((i + 0.5) * rangle / args.leds))),
@@ -79,6 +88,10 @@ def main():
       led_modules="\n".join(modtmpl.substitute(**m) for m in led_modules),
       angle=angle,
       center=vec2str(args.center),
+      p1position=vec2str((args.center[0] - p3radius, args.center[1])),
+      p2position=vec2str((args.center[0] - p20radius, args.center[1])),
+      p3position=vec2str((args.center[0] - p3radius * math.cos(rangle), args.center[1] - p3radius * math.sin(rangle), 360 - angle)),
+      p4position=vec2str((args.center[0] - p20radius * math.cos(rangle), args.center[1] - p20radius * math.sin(rangle), 360 - angle)),
       lr_edge=vec2str((args.center[0] - args.radius, lower)),
       ll_edge=vec2str((args.center[0] - iradius, lower)),
       ul_edge=vec2str((args.center[0] - args.radius * math.cos(rangle), args.center[1] - args.radius * math.sin(rangle))),
