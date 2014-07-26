@@ -1,0 +1,337 @@
+PCBNEW-LibModule-V1  2014-07-25 13:13:55
+# encoding utf-8
+Units mm
+$INDEX
+P?
+boardedge_20
+boardedge_3
+$EndINDEX
+$MODULE P?
+Po 0 0 0 15 53D248A1 00000000 ~~
+Li P?
+Sc 0
+AR 
+Op 0 0 0
+T0 12.065 1.905 1 1 0 0.15 N V 21 N "P?"
+T1 12.065 3.81 1 1 0 0.15 N V 21 N "VAL**"
+$PAD
+Sh "1" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1.27 0
+$EndPAD
+$PAD
+Sh "2" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1.27 0
+$EndPAD
+$PAD
+Sh "3" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2.54 0
+$EndPAD
+$PAD
+Sh "4" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3.81 0
+$EndPAD
+$PAD
+Sh "5" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 5.08 0
+$EndPAD
+$PAD
+Sh "6" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 6.35 0
+$EndPAD
+$PAD
+Sh "7" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7.62 0
+$EndPAD
+$PAD
+Sh "8" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 8.89 0
+$EndPAD
+$PAD
+Sh "9" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 10.16 0
+$EndPAD
+$PAD
+Sh "10" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 11.43 0
+$EndPAD
+$PAD
+Sh "11" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 12.7 0
+$EndPAD
+$PAD
+Sh "12" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 13.97 0
+$EndPAD
+$PAD
+Sh "13" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 15.24 0
+$EndPAD
+$PAD
+Sh "14" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 16.51 0
+$EndPAD
+$PAD
+Sh "15" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 17.78 0
+$EndPAD
+$PAD
+Sh "16" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 19.05 0
+$EndPAD
+$PAD
+Sh "17" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 20.32 0
+$EndPAD
+$PAD
+Sh "18" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 21.59 0
+$EndPAD
+$PAD
+Sh "19" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 22.86 0
+$EndPAD
+$PAD
+Sh "20" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 24.13 0
+$EndPAD
+$EndMODULE P?
+$MODULE boardedge_20
+Po 0 0 0 15 53D248A1 00000000 ~~
+Li boardedge_20
+Sc 0
+AR 
+Op 0 0 0
+T0 12.065 1.905 1 1 0 0.15 N V 21 N "P?"
+T1 12.065 3.81 1 1 0 0.15 N V 21 N "VAL**"
+$PAD
+Sh "1" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1.27 0
+$EndPAD
+$PAD
+Sh "2" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1.27 0
+$EndPAD
+$PAD
+Sh "3" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2.54 0
+$EndPAD
+$PAD
+Sh "4" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3.81 0
+$EndPAD
+$PAD
+Sh "5" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 5.08 0
+$EndPAD
+$PAD
+Sh "6" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 6.35 0
+$EndPAD
+$PAD
+Sh "7" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7.62 0
+$EndPAD
+$PAD
+Sh "8" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 8.89 0
+$EndPAD
+$PAD
+Sh "9" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 10.16 0
+$EndPAD
+$PAD
+Sh "10" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 11.43 0
+$EndPAD
+$PAD
+Sh "11" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 12.7 0
+$EndPAD
+$PAD
+Sh "12" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 13.97 0
+$EndPAD
+$PAD
+Sh "13" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 15.24 0
+$EndPAD
+$PAD
+Sh "14" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 16.51 0
+$EndPAD
+$PAD
+Sh "15" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 17.78 0
+$EndPAD
+$PAD
+Sh "16" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 19.05 0
+$EndPAD
+$PAD
+Sh "17" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 20.32 0
+$EndPAD
+$PAD
+Sh "18" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 21.59 0
+$EndPAD
+$PAD
+Sh "19" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 22.86 0
+$EndPAD
+$PAD
+Sh "20" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 24.13 0
+$EndPAD
+$EndMODULE boardedge_20
+$MODULE boardedge_3
+Po 0 0 0 15 53D249FF 00000000 ~~
+Li boardedge_3
+Sc 0
+AR 
+Op 0 0 0
+T0 1.27 1.905 1 1 0 0.15 N V 21 N "P?"
+T1 1.27 3.81 1 1 0 0.15 N V 21 N "VAL**"
+$PAD
+Sh "1" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "2" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1.27 0
+$EndPAD
+$PAD
+Sh "3" C 0.8 0.8 0 0 0
+Dr 0.5 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2.54 0
+$EndPAD
+$EndMODULE boardedge_3
+$EndLIBRARY
