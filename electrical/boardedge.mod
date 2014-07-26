@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  2014-07-25 13:13:55
+PCBNEW-LibModule-V1  2014-07-26 17:40:54
 # encoding utf-8
 Units mm
 $INDEX
@@ -156,7 +156,7 @@ Po 24.13 0
 $EndPAD
 $EndMODULE P?
 $MODULE boardedge_20
-Po 0 0 0 15 53D248A1 00000000 ~~
+Po 0 0 0 15 53D3DA12 00000000 ~~
 Li boardedge_20
 Sc 0
 AR 
@@ -168,7 +168,7 @@ Sh "1" C 0.8 0.8 0 0 0
 Dr 0.5 0 0
 At STD N 00E0FFFF
 Ne 0 ""
-Po 1.27 0
+Po 0 0
 $EndPAD
 $PAD
 Sh "2" C 0.8 0.8 0 0 0
