@@ -48,7 +48,7 @@ def vec2str(v):
 def main():
    argp = argparse.ArgumentParser()
    argp.add_argument("--segments", type=int, default=16, help="Number of circle segments [%(default)s].")
-   argp.add_argument("--center", type=VectorType(2), default=(400, 254), help="Center of circle on the drawing sheet [%(default)s].")
+   argp.add_argument("--center", type=VectorType(2), default=(400, 127), help="Center of circle on the drawing sheet [%(default)s].")
    argp.add_argument("--radius", type=float, default=250, help="Outer radius, in millimeters [%(default)s mm].")
    argp.add_argument("--width", type=float, default=50, help="Board width, in millimeters [%(default)s mm].")
    argp.add_argument("--edge-conn-spacing", type=float, default=1.27, help="Spacing in board connections, in millimeters [%(default)s mm].")
@@ -76,26 +76,26 @@ def main():
       refposition=vec2str((
          0,
          5.12,
-         360 - (i + 0.5) * angle / args.leds
+         360 - (i - args.leds / 2 + 0.5) * angle / args.leds
       )),
       position=vec2str((
-         args.center[0] - args.radius * math.cos((i + 0.5) * rangle / args.leds),
-         args.center[1] - args.radius * math.sin((i + 0.5) * rangle / args.leds))),
-      angle=90 - (i + 0.5) * angle / args.leds)
+         args.center[0] - args.radius * math.cos((i - args.leds / 2 + 0.5) * rangle / args.leds),
+         args.center[1] - args.radius * math.sin((i - args.leds / 2 + 0.5) * rangle / args.leds))),
+      angle=90 - (i - args.leds / 2 + 0.5) * angle / args.leds)
                   for i in range(args.leds)]
 
    args.output.write(tmpl.substitute(
       led_modules="\n".join(modtmpl.substitute(**m) for m in led_modules),
       angle=angle,
       center=vec2str(args.center),
-      p1position=vec2str((args.center[0] - p3radius, args.center[1])),
-      p2position=vec2str((args.center[0] - p20radius, args.center[1])),
-      p3position=vec2str((args.center[0] - p3radius * math.cos(rangle), args.center[1] - p3radius * math.sin(rangle), 360 - angle)),
-      p4position=vec2str((args.center[0] - p20radius * math.cos(rangle), args.center[1] - p20radius * math.sin(rangle), 360 - angle)),
-      lr_edge=vec2str((args.center[0] - args.radius, lower)),
-      ll_edge=vec2str((args.center[0] - iradius, lower)),
-      ul_edge=vec2str((args.center[0] - args.radius * math.cos(rangle), args.center[1] - args.radius * math.sin(rangle))),
-      ur_edge=vec2str((args.center[0] - iradius * math.cos(rangle), args.center[1] - iradius * math.sin(rangle)))
+      p1position=vec2str((args.center[0] - p3radius * math.cos(-rangle / 2), args.center[1] + p3radius * math.sin(rangle / 2), angle / 2)),
+      p2position=vec2str((args.center[0] - p20radius * math.cos(-rangle / 2), args.center[1] + p20radius * math.sin(rangle / 2), angle / 2)),
+      p3position=vec2str((args.center[0] - p3radius * math.cos(rangle / 2), args.center[1] - p3radius * math.sin(rangle / 2), 360 - angle / 2)),
+      p4position=vec2str((args.center[0] - p20radius * math.cos(rangle / 2), args.center[1] - p20radius * math.sin(rangle / 2), 360 - angle / 2)),
+      lr_edge=vec2str((args.center[0] - args.radius * math.cos(-rangle / 2), args.center[1] + args.radius * math.sin(-rangle / 2))),
+      ll_edge=vec2str((args.center[0] - iradius * math.cos(-rangle / 2), args.center[1] + iradius * math.sin(-rangle / 2))),
+      ul_edge=vec2str((args.center[0] - args.radius * math.cos(rangle / 2), args.center[1] + args.radius * math.sin(rangle / 2))),
+      ur_edge=vec2str((args.center[0] - iradius * math.cos(rangle / 2), args.center[1] + iradius * math.sin(rangle / 2)))
    ))
    args.output.flush()
 

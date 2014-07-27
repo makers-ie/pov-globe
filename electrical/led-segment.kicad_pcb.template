@@ -124,7 +124,7 @@ $led_modules
     (fp_text value VAL** (at 12.065 -3.81) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (pad 1 thru_hole circle (at 1.27 0) (size 0.8 0.8) (drill 0.5)
+    (pad 1 thru_hole circle (at 0 0) (size 0.8 0.8) (drill 0.5)
       (layers *.Cu *.Mask F.SilkS)
     )
     (pad 2 thru_hole circle (at 1.27 0) (size 0.8 0.8) (drill 0.5)
@@ -276,8 +276,8 @@ $led_modules
   )
 
   (gr_line (start $lr_edge) (end $ll_edge) (layer Edge.Cuts) (width 0.1))
-  (gr_arc (start $center) (end $ll_edge) (angle $angle) (layer Edge.Cuts) (width 0.1))
+  (gr_arc (start $center) (end $ul_edge) (angle $angle) (layer Edge.Cuts) (width 0.1))
   (gr_line (start $ul_edge) (end $ur_edge) (layer Edge.Cuts) (width 0.1))
-  (gr_arc (start $center) (end $lr_edge) (angle $angle) (layer Edge.Cuts) (width 0.1))
+  (gr_arc (start $center) (end $ur_edge) (angle $angle) (layer Edge.Cuts) (width 0.1))
 
 )
