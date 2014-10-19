@@ -96,6 +96,7 @@ Electrical
   * 3 Communications (SPI)
   * 4 Stepper motor output (Bipolar H-bridge)
   * 32 LED rows
+  * Max IOH 24 mA when using LVCMOS33 outputs. [Datasheet](http://www.xilinx.com/support/documentation/data_sheets/ds162.pdf), page 10.
 
 Datasheets
 ----------
